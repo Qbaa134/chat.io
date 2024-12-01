@@ -36,16 +36,16 @@
         main {
             padding: 20px;
         }
-        section {
-            margin: 20px 0;
-            padding: 15px;
+        .blog-card {
             background: white;
+            padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none; /* Hidden by default */
+            margin: 20px auto;
+            max-width: 800px;
         }
-        section.active {
-            display: block; /* Show when active */
+        .blog-card h2 {
+            color: #1e90ff;
         }
         footer {
             text-align: center;
@@ -55,19 +55,6 @@
             margin-top: 20px;
         }
     </style>
-    <script>
-        function showSection(id) {
-            // Hide all sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.classList.remove('active'));
-
-            // Show the selected section
-            const selectedSection = document.getElementById(id);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -75,25 +62,14 @@
         <p>Your hub for biking adventures, tips, and reviews</p>
     </header>
     <nav>
-        <a onclick="showSection('adventures')">Adventures</a>
-        <a onclick="showSection('trails')">Trails</a>
-        <a onclick="showSection('reviews')">Reviews</a>
-        <a onclick="showSection('tips')">Tips</a>
+        <a href="#adventures">Adventures</a>
+        <a href="#trails">Trails</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#tips">Tips</a>
     </nav>
     <main>
-        <section id="adventures">
-            <h2>Adventures</h2>
-            <p>Discover thrilling biking journeys and experiences from around the world.</p>
-        </section>
-        <section id="trails">
-            <h2>Amazing Trails</h2>
-            <p>Explore breathtaking bike trails that every enthusiast should try.</p>
-        </section>
-        <section id="reviews">
-            <h2>Reviews</h2>
-            <p>Get insights into the latest bikes and biking gear with honest reviews.</p>
-        </section>
-        <section id="tips">
+        <!-- Blog card for Tips -->
+        <div id="tips" class="blog-card">
             <h2>Biking Tips</h2>
             <h3>Porady rowerowe dla początkujących i zaawansowanych</h3>
             <p>Rower to doskonały środek transportu, sposób na aktywność fizyczną i formę relaksu. Aby jazda była bezpieczna, komfortowa i przyjemna, warto pamiętać o kilku kluczowych zasadach.</p>
@@ -142,7 +118,7 @@
             </ul>
             
             <p>Jazda na rowerze to przyjemność, która z odpowiednią wiedzą i przygotowaniem staje się jeszcze większa. Niezależnie od poziomu zaawansowania, warto pamiętać o tych podstawowych zasadach, aby cieszyć się każdą chwilą spędzoną na dwóch kółkach.</p>
-        </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Bik3Blog | All rights reserved</p>

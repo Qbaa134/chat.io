@@ -28,6 +28,7 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            cursor: pointer;
         }
         nav a:hover {
             background-color: #575757;
@@ -41,6 +42,10 @@
             background: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
+        }
+        section.active {
+            display: block; /* Show when active */
         }
         footer {
             text-align: center;
@@ -50,6 +55,19 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function showSection(id) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show the selected section
+            const selectedSection = document.getElementById(id);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -57,10 +75,10 @@
         <p>Your hub for biking adventures, tips, and reviews</p>
     </header>
     <nav>
-        <a href="#adventures">Adventures</a>
-        <a href="#trails">Trails</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#tips">Tips</a>
+        <a onclick="showSection('adventures')">Adventures</a>
+        <a onclick="showSection('trails')">Trails</a>
+        <a onclick="showSection('reviews')">Reviews</a>
+        <a onclick="showSection('tips')">Tips</a>
     </nav>
     <main>
         <section id="adventures">
@@ -77,7 +95,6 @@
         </section>
         <section id="tips">
             <h2>Biking Tips</h2>
-            <p>Learn tips and tricks to make your biking experience safer and more enjoyable.</p>
             <h3>Porady rowerowe dla początkujących i zaawansowanych</h3>
             <p>Rower to doskonały środek transportu, sposób na aktywność fizyczną i formę relaksu. Aby jazda była bezpieczna, komfortowa i przyjemna, warto pamiętać o kilku kluczowych zasadach.</p>
             

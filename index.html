@@ -53,11 +53,11 @@
         const usd = egp * egpToUsd;
         const eur = egp * egpToEur;
 
-        // Wyświetlanie wyników
+        // Wyświetlanie wyników z dokładnością do 3 miejsc po przecinku
         document.getElementById('results').innerHTML = `
-            <p>${egp} EGP = ${pln} PLN</p>
-            <p>${egp} EGP = ${usd} USD</p>
-            <p>${egp} EGP = ${eur} EUR</p>
+            <p>${egp} EGP = ${pln.toLocaleString('pl-PL', { minimumFractionDigits: 3 })} PLN</p>
+            <p>${egp} EGP = ${usd.toLocaleString('pl-PL', { minimumFractionDigits: 3 })} USD</p>
+            <p>${egp} EGP = ${eur.toLocaleString('pl-PL', { minimumFractionDigits: 3 })} EUR</p>
         `;
     }
 </script>

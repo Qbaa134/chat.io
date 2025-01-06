@@ -44,14 +44,14 @@
         }
 
         // Aktualne kursy walut
-        const egpToPln = 0.08;  // 1 EGP = 0,08 PLN
-        const egpToUsd = 0.02;  // 1 EGP = 0,02 USD
-        const egpToEur = 0.019; // 1 EGP = 0,019 EUR
+        const egpToPln = 0.08;    // 1 EGP = 0,08 PLN
+        const egpToUsd = 0.02;    // 1 EGP = 0,02 USD
+        const egpToEur = 0.019;   // 1 EGP = 0,019 EUR
 
         // Obliczenia
-        const pln = (egp * egpToPln).toFixed(2);
-        const usd = (egp * egpToUsd).toFixed(2);
-        const eur = (egp * egpToEur).toFixed(2);
+        const pln = egp * egpToPln;
+        const usd = egp * egpToUsd;
+        const eur = egp * egpToEur;
 
         // Wyświetlanie wyników
         document.getElementById('results').innerHTML = `
